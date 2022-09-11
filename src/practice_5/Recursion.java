@@ -28,16 +28,21 @@ public class Recursion {
         System.out.println(reverseNumb(number, 0));
     }
 
-    /*Проверка числа на простоту*/
+    /*
+    Дано натуральное число n>1. Проверьте, является ли оно простым.
+    Программа должна вывести слово YES, если число простое и NO, если число составное.
+    */
     private static boolean primeNumber(int number, int param){
         if (number < 2) { return false; }
         if (number == 2) { return true; }
         if (number % param ==0) { return false; }
-        if (param < number / 2) { return primeNumber(number, param + 1); }
+        if (param < Math.sqrt(number)) { return primeNumber(number, param + 1); }
         return true;
     }
 
-    /*Ответ на вопрос "простое ли это число?"*/
+    /*
+    Ответ на вопрос "простое ли это число?"
+    */
     private static void answerIsAPrimeNUmber(int number){
         if (primeNumber(number, 2)){
             System.out.println("YES");
@@ -46,14 +51,17 @@ public class Recursion {
         }
     }
 
-    /*Разложение числа на простые множители в пороядке неубывания*/
+    /*
+    Дано натуральное число n>1.
+    Выведите все простые множители этого числа в порядке не убывания с учетом кратности.
+    */
     private static void factorization(int number, int param ){
-        if (param > number / 2){
+        if (param > Math.sqrt(number)){
             System.out.println(number);
             return;
         }
         if (number % param == 0){
-            System.out.println(param);
+            System.out.print(param + " ");
             factorization(number / param, param);
         }
         else{
@@ -61,7 +69,10 @@ public class Recursion {
         }
     }
 
-    /*Проверка строки на палиндром*/
+    /*
+    Дано слово, состоящее только из строчных латинских букв.
+    Проверьте, является ли это слово палиндромом. Выведите YES или NO.
+    */
     private static void palindrome(String word){
         if(word.length() < 2){
             System.out.println("YES");
@@ -75,10 +86,10 @@ public class Recursion {
         }
     }
 
+    /*
+    Даны числа a и b. Определите, сколько существует последовательностей из a нулей и b единиц, в которых никакие два нуля не стоят рядом.
+    */
     private static int zeroTwo(int a, int b){
-        if(b + 1 == a){
-            return 1;
-        }
         if(a == 0 || b == 0){
             return 1;
         }
@@ -88,6 +99,10 @@ public class Recursion {
         return zeroTwo(a - 1, b - 1) + zeroTwo(a, b - 1);
     }
 
+    /*
+    Дано число n, десятичная запись которого не содержит нулей.
+    Получите число, записанное теми же цифрами, но в противоположном порядке.
+     */
     private static int reverseNumb(int numb, int reverseNumb){
         return numb == 0 ? reverseNumb : reverseNumb(numb / 10, reverseNumb * 10 + numb %10);
     }
