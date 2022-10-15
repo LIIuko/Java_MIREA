@@ -2,8 +2,11 @@ package practice_12_15.practice_12;
 
 
 public class Person {
-    public Person(String SNP) {
-        System.out.print(splitName(SNP));
+    String name;
+    String surname;
+    String lastName;
+    public Person(String name, String surName, String lastName) {
+        System.out.print(splitName(name+" "+surName+" "+lastName));
     }
 
     private StringBuilder splitName(String SNP){
