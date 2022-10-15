@@ -5,8 +5,20 @@ public class Person {
     String name;
     String surname;
     String lastName;
+
+    public Person() {
+        System.out.print("");
+    }
+
+    public Person(String name) {
+        System.out.print(name);
+    }
+    public Person(String name, String surname) {
+        System.out.print(name + " " + surname.charAt(0) + ".");
+    }
+
     public Person(String name, String surName, String lastName) {
-        System.out.print(splitName(name+" "+surName+" "+lastName));
+        System.out.print(name + " " + surName.charAt(0) + ". " + lastName.charAt(0)  + ".");
     }
 
     private StringBuilder splitName(String SNP){
