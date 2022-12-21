@@ -33,7 +33,7 @@ public class ParserHTML {
                     URL url = new URL(link);
                     InputStream in = url.openStream();
 
-                    Files.copy(in, Paths.get("D:\\Programming\\IDEA\\mirea\\src\\practice_23_24\\parser_html\\img\\" + name), StandardCopyOption.REPLACE_EXISTING);
+                    Files.copy(in, Paths.get("D:\\mirea\\3-th sem\\java\\src\\practice_23_24\\parser_html\\img\\" + name), StandardCopyOption.REPLACE_EXISTING);
                     in.close();
                 }
             }

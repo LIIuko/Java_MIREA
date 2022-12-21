@@ -8,8 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Threads {
-    static String dir =
-            "D:\\Programming\\IDEA\\mirea\\src\\practice_27_28";
+    static String dir = "D:\\mirea\\3-th sem\\java\\src\\practice_27_28";
 
     public static void reduceImage(String distFolder, File file) {
         BufferedImage image;

@@ -1,4 +1,4 @@
-package practice_20_21;
+package practice_21_22;
 
 public class MusicDocument implements IDocument{
 }
